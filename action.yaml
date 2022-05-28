@@ -1,0 +1,25 @@
+name: "Mergebase"
+description: ""
+author: "Delan Elliot"
+branding:
+  icon: "alert-triangle"
+  color: "red"
+inputs:
+  project_name:
+    description: "name of your MB project"
+  mb_token:
+    description: "Customer token from your MB dashboard"
+  mb_url:
+    description: "Your dashboard URL in the form https://[domain].mergebase.com"
+  additional_args:
+    description: "additional command line arguments. See CLT user guide for list of available options"
+  json:
+    description: ""
+    default: false
+runs:
+  using: "docker"
+  image: "docker://mergebase/mergebase-sca-base" 
+  env:
+    MB_ENV: GITHUB_ACTION
+  args:
+  - java -Dmb.url=${{inputs.mb_url}} -Dmb.token=${{inputs.mb_token}} -jar /opt/mbjar/meregbase.jar
