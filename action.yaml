@@ -20,4 +20,4 @@ runs:
   env:
     MB_ENV: GITHUB_ACTION
   args:
-  - java -Dmb.url=${{inputs.mb_url}} -Dmb.token=${{inputs.mb_token}} -jar /opt/mbjar/meregbase.jar --name=${{inputs.project_name}} ${{inputs.additional_args}} . 
+  - java -Dmb.url=${{inputs.mb_url}} -Dmb.token=${{inputs.mb_token}} -jar /opt/mbjar/mergebase.jar --name=${{inputs.project_name}} ${{inputs.additional_args}} . 
