@@ -16,8 +16,11 @@ inputs:
     default: ""
 runs:
   using: "docker"
-  image: "docker://mergebase/github-action:1.0.0" 
+  image: "docker://mergebase/github-action:1.0.1" 
   env:
     MB_ENV: GITHUB_ACTION
   args:
-  - java -Dmb.url=${{inputs.mb_url}} -Dmb.token=${{inputs.mb_token}} -jar /opt/mbjar/mergebase.jar --name=${{inputs.project_name}} ${{inputs.additional_args}} . 
+  - ${{inputs.mb_url}} 
+  - ${{inputs.mb_token}} 
+  - ${{inputs.project_name}} 
+  - ${{inputs.additional_args}} 
