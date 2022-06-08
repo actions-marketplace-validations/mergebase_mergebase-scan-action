@@ -16,7 +16,7 @@ inputs:
     default: ""
 runs:
   using: "docker"
-  image: "docker://mergebase/mergebase-sca-base" 
+  image: "docker://mergebase/sca-base-image:0.0.1" 
   env:
     MB_ENV: GITHUB_ACTION
   args:
